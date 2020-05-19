@@ -15,7 +15,7 @@ import vxbd from '@/components/index/vxbd'
 import rsindex from '@/components/rsindex/index'
 import selectemp from '@/components/rsindex/selectemp'
 import pubchcard from '@/components/rsindex/punchcard'
-
+import rsshanbansz from '@/components/rsindex/shanbansz'
 
 import lbindex from '@/components/lbindex/index'
 import shanbansz from '@/components/lbindex/shanbansz'
@@ -34,7 +34,7 @@ export default new Router({
     {path:"/rsndex",component:rsindex,children:[
       {path:"selectemp",component:selectemp,title:'查看员工'},
       {path:"pubchcard",component:pubchcard,title:'申请打卡'},
-      {path:"shanbansz",component:shanbansz,title:'上班设置'},
+      {path:"rsshanbansz",component:rsshanbansz,title:'上班设置'},
       {path:"vxbd",component:vxbd,title:'微信绑定'},
     ]},
      //主页

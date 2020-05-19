@@ -22,7 +22,7 @@
                 </el-option>
             </el-select>
                 <el-tooltip class="item" effect="dark" content="添加星期一到星期五" placement="top-start">
-                 <el-button type="primary" @click="moren()">默认</el-button>
+                 <el-button type="primary" @click="moren">默认</el-button>
                 </el-tooltip>
                 <br/>
                     <el-tooltip class="item" effect="dark" content="只能添加下个月及以后" placement="top-start">
@@ -126,9 +126,14 @@ export default {
         moren(){
             var d=this.value;
             d.setFullYear(this.Year,this.month-1,1);
+             
+             //一号星期几
             var ww=d.getDay();
-            d.setFullYear(this.Year,this.month-1,0);
+            d.setFullYear(this.Year,this.month,0);
+            //当前月有多少天
             var dd=d.getDate();
+            console.log(dd);
+            console.log('ww:'+ww);
             for(var i=1;i<dd+1;i++){
                 if(ww<6){
                      if(this.value1.indexOf(i)==-1){
