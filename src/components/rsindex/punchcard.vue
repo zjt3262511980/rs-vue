@@ -68,7 +68,6 @@ export default {
     },
     methods: {
         saixing(){
-            console.log("123");
              let url = "appl/selectbyempid";
 							let parmas = new URLSearchParams();
               parmas.append("appempid", this.getSessionuserrs.employee.empId);

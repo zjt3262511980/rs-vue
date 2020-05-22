@@ -51,6 +51,7 @@
                           </template>
                           <el-menu-item-group>
                             <el-menu-item index="3-1"><router-link to="/rsndex/rsshanbansz"  slot="title">上班设置</router-link></el-menu-item>
+                           <el-menu-item index="3-1"><router-link to="/rsndex/kaoqin"  slot="title">考勤管理</router-link></el-menu-item>
                           </el-menu-item-group>
                       </el-submenu>
                        <el-submenu index="4">

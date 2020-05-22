@@ -160,7 +160,11 @@ export default {
                       console.log(ex);
                     });
                 } else {
-                    console.log('请填写完成');
+                  this.$message({
+                            message: '请填写完成',
+                            type: 'error',
+                            duration:1000
+                          });
                     return false;
                 }
                 });
