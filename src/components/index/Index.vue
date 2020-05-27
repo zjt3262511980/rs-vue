@@ -21,7 +21,7 @@
                     class="el-menu-vertical-demo"
                     background-color="#545c64"
                     text-color="#fff"
-                    active-text-color="#ffd04b">
+                    active-text-color="#FF7F00">
               <!-- <div v-for="(u,index) in $router.options.routes[1].children" :key="index"> -->
                   <el-submenu index="1">
                           <template slot="title">
@@ -43,10 +43,28 @@
                       </el-submenu>
                       <el-submenu index="3">
                           <template slot="title">
-                            <span>申请</span>
+                            <span>微信</span>
                           </template>
                           <el-menu-item-group>
                             <el-menu-item index="3-1"><router-link to="/index/vxbd"  slot="title">微信绑定</router-link></el-menu-item>
+                          </el-menu-item-group>
+                      </el-submenu>
+                       <el-submenu index="4">
+                          <template slot="title">
+                            <span>薪酬</span>
+                          </template>
+                          <el-menu-item-group>
+                            <el-menu-item index="4-1"><router-link to="/index/xingchouck"  slot="title">薪酬查看</router-link></el-menu-item>
+                               <el-badge  :value="getxingchou" class="item"  v-if="getSessionuserrs.employee.tmExamdataAddition.tmEAPosition=='总经理'">
+                                <el-menu-item v-if="getSessionuserrs.employee.tmExamdataAddition.tmEAPosition=='总经理'" index="4-2">
+                                  <router-link to="/index/xingchouty"  slot="title">薪酬同意</router-link>
+                                  </el-menu-item>
+                                   </el-badge>
+                                  <el-badge  :value="getxingchou" v-if="getSessionuserrs.employee.dept.depDepartment=='财务部'" class="item">
+                              <el-menu-item  index="4-3">
+                              <router-link to="/index/xingchouff"  slot="title">薪酬发放</router-link>
+                              </el-menu-item>
+                              </el-badge>
                           </el-menu-item-group>
                       </el-submenu>
               <!-- </div> -->
@@ -77,10 +95,31 @@ export default {
     host(){
             return this.$axios.defaults.baseURL;
         },
-     ...mapGetters(['getSessionuserrs','gettimedate'])
+     ...mapGetters(['getSessionuserrs','gettimedate','getxingchou'])
   },
   components: {},
   methods: {
+    fanfaocaiwu(){
+        let url = "remu/cwshenqin";
+							let parmas = new URLSearchParams();
+            parmas.append("date",this.gettimedate);
+						this.$axios.post(url, parmas).then(response => {
+              this.set_xingchou(response.data.length);
+						}).catch((ex)=>{
+							console.log(ex);
+                        });
+    },
+    shenqingxingchou(){
+       let url = "remu/zjlshenqin";
+							let parmas = new URLSearchParams();
+            parmas.append("date",this.gettimedate);
+						this.$axios.post(url, parmas).then(response => {
+              this.set_xingchou(response.data.length);
+						}).catch((ex)=>{
+							console.log(ex);
+                        });
+                
+    },
     logout(){
         this.userrsout();
           let url = "Loginrs/logout";
@@ -97,7 +136,7 @@ export default {
                         });
         this.$router.push("/Login");
     },
-    ...mapActions(['set_userrs','userrsout'])
+    ...mapActions(['set_userrs','userrsout','set_xingchou'])
 
   },
     mounted(){
@@ -113,8 +152,14 @@ export default {
                     this.$router.push({path:"/index"}).catch(err => {err});
                   }
                   } 
+                  if(this.getSessionuserrs.employee.dept.depDepartment=='财务部'){
+                    this.fanfaocaiwu();
+                  }else if(this.getSessionuserrs.employee.tmExamdataAddition.tmEAPosition=='总经理'){
+                  this.shenqingxingchou();
+                  }
+    
   }
-
+  
 }
 </script>
 

@@ -56,10 +56,20 @@
                       </el-submenu>
                        <el-submenu index="4">
                           <template slot="title">
-                            <span>申请</span>
+                            <span>微信</span>
                           </template>
                           <el-menu-item-group>
                             <el-menu-item index="4-1"><router-link to="/rsndex/vxbd"  slot="title">微信绑定</router-link></el-menu-item>
+                          </el-menu-item-group>
+                      </el-submenu>
+                      <el-submenu index="5">
+                          <template slot="title">
+                            <span>薪酬</span>
+                          </template>
+                          <el-menu-item-group>
+                            <el-menu-item index="5-1"><router-link to="/rsndex/xingchouck"  slot="title">薪酬查看</router-link></el-menu-item>
+                            <el-menu-item index="5-2"><router-link to="/rsndex/xinco"  slot="title">薪酬</router-link></el-menu-item>
+                            <el-menu-item v-if="getSessionuserrs.employee.tmExamdataAddition.tmEAPosition=='经理'" index="5-2"><router-link to="/rsndex/comp"  slot="title">薪酬值设置</router-link></el-menu-item>
                           </el-menu-item-group>
                       </el-submenu>
               <!-- </div> -->

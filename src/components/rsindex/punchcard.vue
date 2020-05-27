@@ -1,6 +1,9 @@
 <template>
     <div>
-        <el-button type="success" style="float:right;" icon="el-icon-refresh-right" @click="saixing()">刷新</el-button>
+        <el-row>
+          <el-col :span="3" :offset="18"><el-button type="success" icon="el-icon-refresh-right" @click="saixing()">刷新</el-button>
+          </el-col>
+        </el-row>
         <el-row>
             <el-col :span="4" v-for="(li, index) in getlist" :key="li.applyId" :offset="(index)%4!=0||index==1 ? 2 : 0">
                 <div style="height:10px"></div>

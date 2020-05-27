@@ -150,7 +150,7 @@ export default {
                 this.from.cheMoth=this.cxlf+'/'+this.moth;
                     this.$axios.post(url,this.form).then(response => {
                         if(response.data>0){
-                            this.$message({
+                            this.$message({ 
                                 message: '添加成功',
                                 type: 'success',
                                 duration:1000

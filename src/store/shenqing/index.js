@@ -4,6 +4,7 @@ import getters from './getters'
 export default {
     state:{
         appllist:[],
+        xingchou:0,
     },
     getters,
     mutations,

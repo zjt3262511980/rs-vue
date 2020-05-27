@@ -16,7 +16,6 @@
                         :key="i"
                         :label="cxlf+'年'+i+'月'"
                         :value="i"
-                        
                         >
                         </el-option>
                     </el-select>

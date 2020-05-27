@@ -60,7 +60,7 @@ export default {
     methods: {
         init(id){
                 let url = "empcz/byidemp";
-				 let parmas = new URLSearchParams();
+				      let parmas = new URLSearchParams();
                 parmas.append("id",id);
                 this.$axios.post(url, parmas).then(response => {
                       this.emp=response.data;                         

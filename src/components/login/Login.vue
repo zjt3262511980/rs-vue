@@ -124,7 +124,7 @@ export default {
         empId: [{ required: true, message: '员工编号不能为空', trigger: 'blur' }]
  
       },
-      name:"zhuoxinghai",
+      name:"liubi",
       pwd:"123456",
       msg:"",
       zsname:"",
