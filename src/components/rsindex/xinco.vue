@@ -2,7 +2,13 @@
     <div class="">
             月份：{{cxyf}}
             <br/>
-              <el-button type="primary" @click="tianjiai" icon="el-icon-upload">添加</el-button>
+                <el-row>
+                    <el-col :span="3" :offset="7">
+                        <el-button type="primary" @click="tianjiai" icon="el-icon-upload">添加</el-button>
+                    </el-col>
+          <el-col :span="3" :offset="7"><el-button type="success" icon="el-icon-refresh-right" @click="cshsj()">刷新</el-button>
+          </el-col>
+        </el-row>
           <el-table stripe border :data="list" style="width: 100%">
                <el-table-column label="头像" prop="" width="100px">
                     <template slot-scope="scope">

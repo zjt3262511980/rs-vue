@@ -177,6 +177,8 @@ export default {
             //重置
          resetForm(formName) {
                 this.$refs[formName].resetFields();
+                this.emp.empDetail='';
+                this.emp.empImg='';
             },
                 //关闭确认
           handleClose(done) {

@@ -72,9 +72,9 @@ export default {
     methods: {
         saixing(){
              let url = "appl/selectbyempid";
-							let parmas = new URLSearchParams();
-              parmas.append("appempid", this.getSessionuserrs.employee.empId);
-						this.$axios.post(url, parmas).then(response => {
+				let parmas = new URLSearchParams();
+                 parmas.append("appempid", this.getSessionuserrs.employee.empId);
+			this.$axios.post(url, parmas).then(response => {
               if(response.data.length>0){
                 this.set_appllist(response.data);
               }    
@@ -94,6 +94,7 @@ export default {
 						this.$axios.post(url, parmas).then(response => {
               if(response.data>0){
                     this.dialogVisible=false;
+                    this.saixing();
               }    
 						}).catch((ex)=>{
 							console.log(ex);
@@ -111,6 +112,7 @@ export default {
 						this.$axios.post(url, parmas).then(response => {
               if(response.data>0){
                     this.dialogVisible=false;
+                    this.saixing();
               }    
 						}).catch((ex)=>{
 							console.log(ex);

@@ -188,6 +188,7 @@ export default {
                                 type: 'success',
                                 duration:1000
                             });
+                            
                           }                
                     }).catch((ex)=>{
                     console.log(ex);

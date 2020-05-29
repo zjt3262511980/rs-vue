@@ -35,7 +35,7 @@
                <el-tag type="success">{{cxlf+'/'+moth}}月</el-tag>
             </el-form-item>
            <el-form-item>
-            <el-button type="primary" @click="onSubmit">立即创建</el-button>
+            <el-button type="primary" @click="kaoqintianjian()">立即创建</el-button>
                 <el-popconfirm title="确定强行修改吗？" @onConfirm="xg=false">
                 <el-button slot="reference" >修改</el-button>
                 </el-popconfirm>
@@ -145,9 +145,10 @@ export default {
                 });
             }
         },
-         onSubmit() {
+         kaoqintianjian() {
+            
                 let url = "check/insertckeck";
-                this.from.cheMoth=this.cxlf+'/'+this.moth;
+                this.form.cheMoth=this.cxlf+'/'+this.moth;
                     this.$axios.post(url,this.form).then(response => {
                         if(response.data>0){
                             this.$message({ 
@@ -156,6 +157,7 @@ export default {
                                 duration:1000
                                 });
                                 this.$refs[formName].resetFields();
+                               
                         }else{
                             this.$message({
                                 message: '添加失败',

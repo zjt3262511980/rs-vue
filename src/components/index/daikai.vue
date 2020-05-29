@@ -115,11 +115,11 @@ export default {
 					daikai(){
 						var oDate1=this.date;
 						//上午
-						var oDate2=new Date(this.nowYear+"/"+this.nowMonth+"/"+this.nowDay+" 07:55:00")
-						var oDate3=new Date(this.nowYear+"/"+this.nowMonth+"/"+this.nowDay+" 08:00:00")
+						var oDate2=new Date(this.nowYear+"/"+this.nowMonth+"/"+this.nowDay+" 07:30:00")
+						var oDate3=new Date(this.nowYear+"/"+this.nowMonth+"/"+this.nowDay+" 08:30:00")
 						//下午
-						var oDate4=new Date(this.nowYear+"/"+this.nowMonth+"/"+this.nowDay+" 13:55:00")
-						var oDate5=new Date(this.nowYear+"/"+this.nowMonth+"/"+this.nowDay+" 14:00:00")
+						var oDate4=new Date(this.nowYear+"/"+this.nowMonth+"/"+this.nowDay+" 13:30:00")
+						var oDate5=new Date(this.nowYear+"/"+this.nowMonth+"/"+this.nowDay+" 14:30:00")
 							if(oDate1>oDate2&&oDate1<oDate3||oDate1>oDate4&&oDate1<oDate5){
 								return true;
 							}else{

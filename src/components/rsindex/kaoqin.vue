@@ -6,7 +6,10 @@
                     label="查看考勤信息"
                     name="0"
                   closable>
-
+      <el-row>
+          <el-col :span="3" :offset="18"><el-button type="success" icon="el-icon-refresh-right" @click="cxchen()">刷新</el-button>
+          </el-col>
+        </el-row>
                   <el-table stripe border :data="listcheck" style="width: 100%">
                    <el-table-column  v-for="news in props" :key="news.id" :prop="news.prop" :label="news.label" :width="news.width"></el-table-column>
                   </el-table>
