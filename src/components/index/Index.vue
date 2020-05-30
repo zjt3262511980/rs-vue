@@ -30,6 +30,7 @@
                           </template>
                           <el-menu-item-group>
                             <el-menu-item index="1-1"><router-link to="/index/daikai"  slot="title">打卡</router-link></el-menu-item>
+                            <el-menu-item index="1-2"><router-link to="/index/daikaixx"  slot="title">打卡信息</router-link></el-menu-item>
                           </el-menu-item-group>
                       </el-submenu>
                        <el-submenu index="2">

@@ -149,8 +149,6 @@ export default {
             this.$axios.post(url).then(response => {
                 if(response.data.userId!=null){
                 this.set_userrs(response.data);
-                console.log(response.data);
-                console.log('++++++');
                 }
             });
     },

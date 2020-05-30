@@ -12,6 +12,7 @@ import vxbd from '@/components/index/vxbd'
 import xingchouff from '@/components/index/xingchouff'
 import xingchouty from '@/components/index/xingchouty'
 import xingchouck from '@/components/index/xingchuock'
+import daikaixx from '@/components/index/daikaixx'
 
 import rsindex from '@/components/rsindex/index'
 import selectemp from '@/components/rsindex/selectemp'
@@ -51,6 +52,7 @@ export default new Router({
      //主页
      {path:"/index",component:index,children:[
       {path:"daikai",component:daikai,title:'打卡'},
+      {path:"daikaixx",component:daikaixx,title:'打卡信息'},
       {path:"shenqin",component:shenqin,title:'申请打卡'},
       {path:"xingchouck",component:xingchouck,title:'薪酬查看'},
       {path:"xingchouty",component:xingchouty,title:'薪酬同意'},
